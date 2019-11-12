@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
+
 import './App.css';
 
 function App() {
@@ -6,10 +7,9 @@ function App() {
     return (
       <div className="App">
         <header className="Body">
-
-          <Diyi />
-          <Dier />
-          <Disan />
+          <Diyi number={1}/>
+          <Diyi number={2}/>
+          <Diyi number={3}/>
         </header>
       </div>
     );
@@ -17,102 +17,28 @@ function App() {
 }
 
 
-function Diyi() {
+function Diyi(props) {
   // Declare a new state variable, which we'll call "count"
   
-  const [first, setFirst] = useState(0);
+  const [first, setFirst] = useState("Click me,please");
 
-  function handleClick() {
-    setFirst(first + 1);
-  } 
+  function handleClick()  {
+    return setFirst("you're clicking button");
+  }
 
-  if(first > 100) {
-    return 
-  } else {
     return (
     <div>
-     
       <button className="hotbutton" onClick={handleClick}>
-        first
+        {props.number}
       </button>
-
-      <p>You clicked {first} times</p>
+      <p>{first} {props.number}</p>
     </div>
   );
 }
-}
-
-function Dier() {
-  // Declare a new state variable, which we'll call "count"
-  
-  const [second, setSecond] = useState(0);
-
-  function handleClick() {
-    setSecond(second + 1);
-  } 
-
-  if(second > 100) {
-    return 
-  } else {
-    return (
-    <div>
-     
-      <button className="hotbutton" onClick={handleClick}>
-        second
-      </button>
-
-      <p>You clicked {second} times</p>
-    </div>
-  );
-}
-}
-
-function Disan() {
-  // Declare a new state variable, which we'll call "count"
-  
-  const [san, setSan] = useState(0);
-
-  function handleClick() {
-    setSan(san + 1);
-  } 
-
-  if(san > 100) {
-    return 
-  } else {
-    return (
-    <div>
-     
-      <button className="hotbutton" onClick={handleClick}>
-        san
-      </button>
-
-      <p>You clicked {san} times</p>
-    </div>
-  );
-}
-}
 
 
-// function firstButton() {
-//   // Declare a new state variable, which we'll call "count"
-//   const [count, setCount] = useState(0);
 
-//   function handleClick() {
-//     setCount(count + 1);
-//   } 
 
-//   if(count > 100) {
-//     return 
-//   } else {
-//     return (
-//     <div>
-//       <p>You clicked {count} times</p>
-//       <button className="hotbutton" onClick={handleClick}>
-//         Click me
-//       </button>
-//     </div>
-//   );
-// }
-// }
+
 
 export default App;

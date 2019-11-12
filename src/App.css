@@ -24,7 +24,8 @@
 
 .Body{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
   
 }
   
@@ -46,6 +47,15 @@
 }
 
 .hotbutton:hover {
-  color:#fc3903;
-  background-color:#fcfc03;
+  color:green;
+
+}
+
+.hotbutton:active {
+  background: #0044aa;
+}
+
+.hotbutton:focus {outline:0;}
+ul {
+  margin-left: 20px;
 }
